@@ -1,0 +1,83 @@
+:root {
+  --field-shadow: 0px 1px 6px rgba(26, 26, 26, 0.10);
+  --field-x-bg: #238bca33;
+  --field-x-stroke: #238BCA;
+  --field-o-bg: #E6555133;
+  --field-o-stroke: #E65551;
+  --field-empty-bg: #12161f;
+  --field-base: #12161f;
+}
+
+.tttCell {
+  width: 112px;
+  height: 112px;
+  border-radius: 16px;
+  background: var(--field-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: var(--field-shadow);
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow 0.18s;
+  appearance: none;
+}
+
+.emptyCell {
+  background: var(--field-empty-bg);
+  border: 1px solid #434343;
+}
+
+.winCellX {
+  background: var(--field-x-bg);
+  border: 1px solid var(--field-x-stroke);
+}
+
+.winCellO {
+  background: var(--field-o-bg);
+  border: 1px solid var(--field-o-stroke);
+}
+
+.baseCell {
+  background: var(--field-base);
+  border: 1px solid #434343;
+}
+
+.cellX {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  display: block;
+}
+.xLine1,
+.xLine2 {
+  position: absolute;
+  width: 60px;
+  height: 8px;
+  background: var(--field-x-stroke);
+  border-radius: 8px;
+  top: 26px;
+  left: 0;
+  display: block;
+}
+.xLine1 { transform: rotate(45deg);}
+.xLine2 { transform: rotate(-45deg);}
+.cellO {
+  width: 60px;
+  height: 60px;
+}
+.tttCell:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+
+@media (max-width: 500px) {
+  .tttCell {
+    width: 22vw;
+    height: 22vw;
+    min-width: 68px;
+    min-height: 68px;
+  }
+}
