@@ -1,0 +1,12 @@
+.tictactoeBoard {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 40px;
+}
+
+@media (max-width: 500px) {
+  .tictactoeBoard {
+    gap: 3vw;
+  }
+}

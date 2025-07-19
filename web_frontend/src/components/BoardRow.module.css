@@ -1,0 +1,11 @@
+.tttRow {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+}
+
+@media (max-width: 500px) {
+  .tttRow {
+    gap: 3vw;
+  }
+}

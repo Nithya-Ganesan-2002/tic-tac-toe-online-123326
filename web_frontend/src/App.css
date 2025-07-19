@@ -21,12 +21,98 @@
   --button-text: #ffffff;
 }
 
+:root {
+  --background-dark: #0c1017;
+  --board-gap: 14px;
+  --field-shadow: 0px 1px 6px rgba(26, 26, 26, 0.10);
+  --field-x-bg: #238bca33;
+  --field-x-stroke: #238BCA;
+  --field-o-bg: #E6555133;
+  --field-o-stroke: #E65551;
+  --field-empty-bg: #12161f;
+  --field-base: #12161f;
+  --text-title: #248BE8;
+  --text-sub: #ADADAD;
+  --cta-bg: #262626;
+  --cta-icon-color: #ADADAD;
+}
+
 .App {
   text-align: center;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: var(--background-dark);
+  color: #fff;
   min-height: 100vh;
   transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+.frame-game-dark {
+  width: 412px;
+  min-height: 700px;
+  background: var(--background-dark);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.status-message {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.win-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--text-title);
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: var(--text-sub);
+  line-height: 1.15;
+}
+
+.cta-bar {
+  width: 364px;
+  height: 54px;
+  background: var(--cta-bg);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  position: absolute;
+  left: 24px;
+  box-shadow: 0 1px 4px rgba(26,26,26,0.08);
+  justify-content: center;
+}
+
+.cta-label {
+  font-size: 16px;
+  color: var(--cta-icon-color);
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  user-select: none;
+}
+
+@media (max-width: 500px) {
+  .frame-game-dark {
+    width: 100vw;
+    min-width: 0;
+    min-height: 100vh;
+    padding-bottom: 16px;
+    box-sizing: border-box;
+  }
+  .cta-bar {
+    left: 50%;
+    width: 90vw;
+    transform: translateX(-50%);
+    bottom: 8vw;
+  }
 }
 
 .App-logo {
